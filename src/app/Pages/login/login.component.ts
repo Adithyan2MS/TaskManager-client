@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { response } from 'express';
-import { error, log } from 'console';
 import { AppService } from '../../app-service.service';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +20,7 @@ export class LoginComponent implements OnInit {
   loginSuccess: boolean | any;
   errorMsg:string | any;
   
-  constructor(private formBuilder : FormBuilder, private appService: AppService){}
+  constructor(private formBuilder : FormBuilder, private appService: AppService,private router:Router){}
 
     ngOnInit():void{
 
@@ -40,32 +39,39 @@ export class LoginComponent implements OnInit {
     this.loginForm.markAllAsTouched();
     console.log(this.submit);
     return;
-  }
+      }
 
-  const formValues= this.loginForm.getRawValue();
- 
+  const formValues= this.loginForm.getRawValue(); 
 
   const userData= {
     username: formValues.username,
     password: formValues.password
   }
  
-  // console.log(userData);
-
- const apiUrl="http://localhost:8084/api/v1/auth/login";
+ const apiUrl=`${environment.apiUrl}/api/v1/auth/login`;
+ const apiUrl1=`${environment.apiUrl}/api/v1/user/currentUserProfile`;
 
  this.appService.postReturn(apiUrl, userData).subscribe((res:any) =>{
-  // console.log(res);
-  // console.log(res.response);
-  
+    
   if(res.status=="True"){
     this.loginSuccess=true;
     this.loginForm.reset();
-    
+    console.log(res.response);   
+    localStorage.setItem("token",res.response); 
+  
+    this.appService.getReturn(apiUrl1).subscribe((resp:any) =>{
+      localStorage.setItem("user",JSON.stringify(resp))
+      this.router.navigate(["/dashboard"])
+    },(error)=>{
+      this.loginSuccess = false;      
+    })
+
   }
+
   else{
     this.errorMsg =res.response;
       this.loginSuccess = false;
+      console.error(res.response);      
   }
  })
  

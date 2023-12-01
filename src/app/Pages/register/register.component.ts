@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { response } from 'express';
 import { AppService } from '../../app-service.service';
+import { User } from '../../Models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -16,8 +18,11 @@ export class RegisterComponent implements OnInit {
    registerForm !: FormGroup ;
    loginForm: any;
    submit:boolean=false;
+   registerSuccess: boolean | any;
+   errorMsg:string | any;
 
-   constructor(private formBuilder : FormBuilder, private appService : AppService){}
+
+   constructor(private formBuilder : FormBuilder, private appService : AppService, private router: Router){}
     ngOnInit(){
      this.registerForm=this.formBuilder.group({
       firstname:["",Validators.required],
@@ -26,7 +31,7 @@ export class RegisterComponent implements OnInit {
       password:["",[Validators.required,Validators.pattern("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}")]],
       confirmPassword:["",[Validators.required,Validators.pattern("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}")]],
       email: ["",[Validators.required,Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}")]],
-      orgId:["",Validators.required],
+      orgId:["",[Validators.required,Validators.pattern("[0-9]*")]],
       roleId:["",Validators.required]  
     })
   }
@@ -42,7 +47,7 @@ export class RegisterComponent implements OnInit {
   
    const formValues=this.registerForm.getRawValue();
 
-   const userData= {
+   const userData : User= {
     firstname: formValues.firstname,
     lastname:formValues.lastname,
     username: formValues.username,
@@ -55,9 +60,24 @@ export class RegisterComponent implements OnInit {
   console.log(userData);
 
   const apiUrl="http://localhost:8084/api/v1/admin/register";
-  this.appService.postReturn(apiUrl, userData).subscribe((response)=>{
-    console.log("Registration Successful",response);
+  this.appService.postReturn(apiUrl, userData).subscribe((resp:any)=>{
+    console.log("Registration Successful",resp);
     
-  })
+    if(resp.status=="True"){
+      this.registerSuccess=true;
+      this.registerForm.reset();
+      console.log(resp.response);   
+      localStorage.setItem("token",resp.response);    
+         
+    }
+  
+    else{
+      this.errorMsg =resp.response;
+        this.registerSuccess = false;
+        console.error(resp.response);      
+    }
+   })
+   
+   this.submit=false;
  }
 }

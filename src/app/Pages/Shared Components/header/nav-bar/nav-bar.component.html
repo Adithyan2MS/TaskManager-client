@@ -1,9 +1,18 @@
 
   <nav>
     <h1>Task Manager</h1>
-    <a href="#">Home</a>
-    <a [routerLink]="'/login'" href="">Login</a>
-    <a style="float: right;" href="#">Logout</a>
+
+    
+    @if(username){
+        <a style="float: right; " [routerLink]="'/login'"href="" (click)="logout()">Logout</a>
+        <a style="float: left;" [routerLink]="'/dashboard'" href="">Dashboard</a>
+        <div class="user-name"><span class="first-name"  style="float: right;"> {{firstname}}</span></div>
+    }
+
+    @else {       
+        <a style="float: right;" [routerLink]="'/register'" href="">Register</a>  
+        <a [routerLink]="'/login'" href="">Login</a>      
+      }
+
   </nav>
  
-

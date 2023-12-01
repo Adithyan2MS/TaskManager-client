@@ -9,6 +9,9 @@ export class AppService {
   constructor(private httpCient : HttpClient) { }
 
   postReturn(apiUrl : string, requestBody:any| null, options?: any){
-    return this.httpCient.post(apiUrl,requestBody)
+    return this.httpCient.post(apiUrl,requestBody,options)
+  }
+  getReturn(apiUrl : string, options?: any){
+    return this.httpCient.get(apiUrl,options)
   }
 }

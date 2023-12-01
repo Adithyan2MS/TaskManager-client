@@ -9,8 +9,7 @@ nav {
   background-color: rgb(138, 113, 113);
   overflow: hidden;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  border-radius: 12px;
-  
+  border-radius: 12px;    
   
 }
 
@@ -35,4 +34,17 @@ nav h1{
     color: black;
   }
 
+  .user-name{
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    
+  }
+  .first-name{
+    text-decoration: dotted;
+  }
+
+  
   
