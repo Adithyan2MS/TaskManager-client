@@ -1,9 +1,21 @@
 .dashboard-container{
     height: 800px;
-    background-color: rgb(248, 214, 171);
     border-radius: 12px;   
+    margin-top: 6px;
+    display: flex;
+    width: 100%;
+    gap:8px   
+
 }
 app-left-nav{
     height: 100%;
+    width: 15%;
     border-radius: 12px;   
+}
+app-view-area{
+    height: 100%;
+    width: 85%;
+    border-radius: 12px;
+    background-color: rgb(207, 201, 200);
+    
 }

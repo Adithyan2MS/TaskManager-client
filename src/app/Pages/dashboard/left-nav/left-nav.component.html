@@ -1,11 +1,12 @@
 
 <div class="left-sidebar">
-    <ul>
-      <li><a [routerLink]="'/tasks'" href="">Tasks</a></li>
+    <div class="items">
+      <div class="item" (click)="viewComponent('task')">Tasks</div>
   
-      <li><a [routerLink]="'/projects'" routerLinkActive="active">Projects</a></li>
+      <div  class="item" (click)="viewComponent('projects')"><a [routerLink]="'/projects'" routerLinkActive="active">Projects</a></div>
 
-      <li><a [routerLink]="'/Team'" routerLinkActive="active">Team</a></li>
+      <div  class="item" (click)="viewComponent('team')"><a [routerLink]="'/Team'" routerLinkActive="active">Team</a></div>
      
-    </ul>
+    </div>
   </div>
+  

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { environment } from '../../../../../environments/environment.development';
-import { AppService } from '../../../../app-service.service';
+import { AppService } from '../../../../Services/app-service.service';
 import { HttpHeaders } from '@angular/common/http';
 
 @Component({
@@ -23,7 +23,9 @@ export class NavBarComponent implements OnInit
     this.router.events.subscribe((value:any)=>
     {
       if(value.url){
-        if(localStorage.getItem("user")){
+        console.log(value.url);
+        
+        if(typeof localStorage!=="undefined" && localStorage.getItem("user")){
       this.user = localStorage.getItem("user");
       console.log(this.user);
      

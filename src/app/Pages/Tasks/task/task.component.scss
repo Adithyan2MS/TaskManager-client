@@ -1,0 +1,58 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    width: 50%;
+}
+
+.tasks-list {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    padding: 20px;
+    margin: 0;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+}
+
+.task-list {
+    padding: 20px;
+}
+
+.taskitem {
+    margin-bottom: 20px;
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.status-item {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.status-item::before {
+    content: "●";
+    color: #e74c3c;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.status-item[t_status="Completed"]::before {
+    color: #2ecc71;
+}

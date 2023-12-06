@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AppService } from '../../app-service.service';
+import { AppService } from '../../Services/app-service.service';
 import { environment } from '../../../environments/environment.development';
 
 @Component({

@@ -1,28 +1,35 @@
 
 .left-sidebar {
-    height: 95%; 
-    width: 200px;
-    background-color: #f0f0f0;
-    padding: 20px;
+    display: flex;
+    height: 100%; 
+    width: 100%;
+    background-color: #f0f0f0;  
     position: sticky;
     border-radius: 12px;
   }
    
-  .left-sidebar ul {
+  .items {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
     list-style-type: none;
-    padding: 0;
+    padding: 5px;
   }
    
-  .left-sidebar li {
-    margin-bottom: 10px;
+  .item {
+    margin-top: 20px;
+    height: 50px;
+    font-weight: bold;
   }
    
-  .left-sidebar a {
+  .item a {
     text-decoration: none;
     color: #333;
   }
    
-  .left-sidebar a.active {
+  .item a.active {
     font-weight: bold;
     color: #007bff;
   }

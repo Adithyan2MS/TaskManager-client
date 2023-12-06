@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { NavBarComponent } from './Pages/Shared Components/header/nav-bar/nav-bar.component';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { NavBarComponent } from './Pages/Shared Components/header/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-root',
