@@ -4,6 +4,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const token = localStorage.getItem("token");
  
   if (token) {
+    
+    
     if (req.headers.get('ResponseType') === 'text') {
       const authReq = req.clone({
         responseType: 'text',

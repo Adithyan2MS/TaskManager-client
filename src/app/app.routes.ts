@@ -19,11 +19,7 @@ export const routes: Routes = [
         component:LoginComponent,
         title:"Login to Task Manager"
     },
-    {
-        path:"register",
-        component:RegisterComponent,
-        title:"Register to Task Manager"
-    },
+
     {
         path:"profile",
         component:ProfileComponent,

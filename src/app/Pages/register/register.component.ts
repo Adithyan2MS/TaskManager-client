@@ -62,20 +62,10 @@ export class RegisterComponent implements OnInit {
   const apiUrl="http://localhost:8084/api/v1/admin/register";
   this.appService.postReturn(apiUrl, userData).subscribe((resp:any)=>{
     console.log("Registration Successful",resp);
-    
-    if(resp.status=="True"){
       this.registerSuccess=true;
+      window.alert("User Registration Successfull !")
       this.registerForm.reset();
-      console.log(resp.response);   
-      localStorage.setItem("token",resp.response);    
-         
-    }
-  
-    else{
-      this.errorMsg =resp.response;
-        this.registerSuccess = false;
-        console.error(resp.response);      
-    }
+      console.log(resp.response);    
    })
    
    this.submit=false;

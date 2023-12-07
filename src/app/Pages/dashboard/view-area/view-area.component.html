@@ -1,11 +1,18 @@
-<!-- <p>view-area works!</p> -->
-@if(comp=="task"){
+
+<!-- @if(comp=="task"){
     <app-task></app-task>
+} -->
+@if(comp=="user"){
+    <app-user></app-user>
 }
-@else if (comp=="projects") {
-    ihuhuioui
+@else if (comp=="register") {
+    <app-register></app-register>
 }
-@else if (comp=="team") {
-    team memnbers
+@else if (comp=="createOrg") {
+    <app-organization></app-organization>
+}
+
+@else if (comp=="createCategory") {
+     <app-task-category></app-task-category>
 }
 

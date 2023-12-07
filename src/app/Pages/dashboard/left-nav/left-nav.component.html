@@ -1,11 +1,16 @@
 
 <div class="left-sidebar">
+  if()
     <div class="items">
-      <div class="item" (click)="viewComponent('task')">Tasks</div>
+      <!-- <div class="item" (click)="viewComponent('task')">Tasks</div> -->
+      
+      <div class="item" (click)="viewComponent('user')">User List</div>
   
-      <div  class="item" (click)="viewComponent('projects')"><a [routerLink]="'/projects'" routerLinkActive="active">Projects</a></div>
+      <div  class="item" (click)="viewComponent('register')">Register Users</div>
 
-      <div  class="item" (click)="viewComponent('team')"><a [routerLink]="'/Team'" routerLinkActive="active">Team</a></div>
+      <div  class="item" (click)="viewComponent('createOrg')">Create Organzation</div>
+
+      <div  class="item" (click)="viewComponent('createCategory')">Create Task Category</div>
      
     </div>
   </div>
