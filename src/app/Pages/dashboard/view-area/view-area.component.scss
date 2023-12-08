@@ -1,7 +1,14 @@
-p{
-    padding: 20px;
-}
+
 app-task{
     display: flex;
     height: 100%;
+}
+
+app-task-category{
+    background-color: rgb(226, 219, 217);
+    border-radius: 12px;
+}
+app-user{
+    width:40%;
+  
 }

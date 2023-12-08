@@ -1,8 +1,10 @@
 
 <div class="left-sidebar">
-  if()
-    <div class="items">
-      <!-- <div class="item" (click)="viewComponent('task')">Tasks</div> -->
+
+@switch (userRole) {
+  @case ("ADMIN") 
+  {
+    <div class="items">   
       
       <div class="item" (click)="viewComponent('user')">User List</div>
   
@@ -13,5 +15,19 @@
       <div  class="item" (click)="viewComponent('createCategory')">Create Task Category</div>
      
     </div>
-  </div>
+
+  } 
   
+  @case ("GM") {
+    <div class="items">   
+       <div class="item" (click)="viewComponent('project')">Project List</div>
+
+       <div class="item" (click)="viewComponent('addProject')">Add Projects</div>
+
+       <div class="item" (click)="viewComponent('task')">Create Task</div>
+
+    </div>
+    
+  }
+}
+  </div>

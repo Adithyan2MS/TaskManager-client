@@ -23,17 +23,16 @@ export class NavBarComponent implements OnInit
     this.router.events.subscribe((value:any)=>
     {
       if(value.url){
-        console.log(value.url);
         
         if(typeof localStorage!=="undefined" && localStorage.getItem("user")){
       this.user = localStorage.getItem("user");
-      console.log(this.user);
+      
      
       this.username = JSON.parse(this.user).username;
-      console.log(this.username);
+      
 
       this.firstname = JSON.parse(this.user).firstname;
-      console.log(this.firstname);
+     
       
     }
     else{

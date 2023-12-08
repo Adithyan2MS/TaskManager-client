@@ -1,0 +1,19 @@
+<div class="projects-list">
+    <h2>Projects</h2>
+    <div class="project-list">
+        @for(project of projects;track project.id){
+            <div class="project-item">
+                <div class="project-name">{{ project.project_name }}</div>
+                <div class="status-item">
+                    @if (project.project_status=="Completed") {
+                        <div class="greenBullet"> </div> 
+                    }
+                    @else {
+                        <div class="redBullet"> </div> 
+                    }
+                    <span>Status: {{ project.project_status }}</span>
+                </div>
+            </div>
+          }
+        </div>
+</div>

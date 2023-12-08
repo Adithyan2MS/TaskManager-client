@@ -6,13 +6,14 @@ import { UserComponent } from '../../user/user.component';
 import { RegisterComponent } from '../../register/register.component';
 import { OrganizationComponent } from '../../organization/organization.component';
 import { TaskCategoryComponent } from '../../task-category/task-category.component';
+import { ProjectComponent } from '../../project/project.component';
 
 @Component({
-  selector: 'app-view-area',
-  standalone: true,
-  imports: [CommonModule,UserComponent,RegisterComponent,OrganizationComponent,TaskCategoryComponent],
-  templateUrl: './view-area.component.html',
-  styleUrl: './view-area.component.scss'
+    selector: 'app-view-area',
+    standalone: true,
+    templateUrl: './view-area.component.html',
+    styleUrl: './view-area.component.scss',
+    imports: [CommonModule, UserComponent, RegisterComponent, OrganizationComponent, TaskCategoryComponent, TaskComponent, ProjectComponent]
 })
 export class ViewAreaComponent implements OnInit{
   constructor(private dataService:DataService){}

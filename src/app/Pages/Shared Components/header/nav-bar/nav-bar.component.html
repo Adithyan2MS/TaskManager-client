@@ -6,7 +6,7 @@
     @if(username!=null){
         <a style="float: right; " [routerLink]="'/login'"href="" (click)="logout()">Logout</a>
         <a style="float: left;" [routerLink]="'/dashboard'" href="">Dashboard</a>
-        <div class="user-name"><span class="first-name"  style="float: right;" [routerLink]="'/profile'"> {{firstname}}</span></div>
+        <span class="user-name"  style="float: right;" [routerLink]="'/profile'"> {{firstname}}</span>
     }
 
     @else {       
