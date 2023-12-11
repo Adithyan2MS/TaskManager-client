@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppService } from '../../Services/app-service.service';
-import { TaskCategory } from '../../Models/task-category';
 import { environment } from '../../../environments/environment.development';
 import { HttpHeaders } from '@angular/common/http';
+import { TaskCategory } from '../../Models/data';
 
 
 @Component({

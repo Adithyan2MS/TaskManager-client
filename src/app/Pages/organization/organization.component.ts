@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AppService } from '../../Services/app-service.service';
 import { Router } from '@angular/router';
-import { Organization } from '../../Models/organization';
 import { environment } from '../../../environments/environment.development';
+import { Organization } from '../../Models/data';
 
 @Component({
   selector: 'app-organization',

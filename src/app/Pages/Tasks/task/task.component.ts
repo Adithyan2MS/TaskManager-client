@@ -23,7 +23,7 @@ export class TaskComponent implements OnInit {
   loadTasks() {
 
     
-    this.taskService.getReturn(`${environment.apiUrl}/api/v1/project/task/MyTasks`).subscribe(
+    this.taskService.getReturn(`${environment.apiUrl}/api/v1/project/task/AssignedTasks`).subscribe(
       (data: any) => {
         this.tasks = data;
         console.log(this.tasks);

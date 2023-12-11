@@ -1,12 +1,21 @@
 
   <div class="tasks-list">
-      <h2>Your Tasks</h2>
+      <h2>Tasks You Assigned</h2>
       <div class="task-list">
           @for(task of tasks;track task.id){
               <div class="taskitem">
                   <div class="task-title">{{ task.t_title }}</div>
-                  <div class="status-item">Status: {{ task.t_status }}</div>
-              </div>
-            }
+                  <div class="status-item">
+                    @if (task.t_status =="Completed") {
+                        <div class="greenBullet"> </div> 
+                    }
+                    @else {
+                        <div class="redBullet"> </div> 
+                    }
+                    <span>Status: {{  task.t_status }}</span>
+                      
+              </div>           
+        
         </div>
+    }
   </div>
