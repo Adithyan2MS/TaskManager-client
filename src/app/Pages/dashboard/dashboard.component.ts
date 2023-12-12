@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeftNavComponent } from './left-nav/left-nav.component';
+import { ProjectComponent } from '../project/project.component';
 import { ViewAreaComponent } from './view-area/view-area.component';
 
 @Component({

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AppService } from '../../Services/app-service.service';
+import { AppService } from '../../../Services/app-service.service';
 import { Router } from '@angular/router';
-import { Project } from '../../Models/data';
-import { environment } from '../../../environments/environment.development';
+import { Project } from '../../../Models/data';
+import { environment } from '../../../../environments/environment.development';
 import { HttpHeaders } from '@angular/common/http';
 
 @Component({

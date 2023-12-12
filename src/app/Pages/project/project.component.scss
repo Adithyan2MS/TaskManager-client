@@ -1,58 +1,17 @@
 
-.projects-list {
-    min-width: 500px;
-    margin: 20px auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
+.container {
     display: flex;
-    justify-content: center;
-    padding: 20px;
-    margin: 0;
-    background-color: #3498db;
-    color: #fff;
-    border-radius: 8px 8px 0 0;
-}
-
-.project-list {
-    padding: 20px;
-}
-
-.project-item {
-    margin-bottom: 20px;
-    background-color: #ecf0f1;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.project-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-.status-item {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #7f8c8d;
+    flex-direction: column;
+    background-color: rgb(196, 185, 182);
+    height: 100vh;
+  }
+   
+  app-list-project {
     display: flex;
-    align-items: center;
-    gap:5px
-}
-
-.redBullet{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: red;
-}
-.greenBullet{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: green;
-}
+    width: 100%;
+    border-radius: 12px;
+  }
+   
+  app-add-project {
+    display: flex;
+  }

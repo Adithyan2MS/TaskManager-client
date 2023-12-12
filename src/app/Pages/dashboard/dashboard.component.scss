@@ -13,13 +13,12 @@ app-left-nav{
     border-radius: 12px;   
 }
 app-view-area{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; 
+    align-self: start;  
     height: 100%;
-    width: 82%;
+     width: 82%;
     border-radius: 12px;
-    background-color: #e2725bd5;
+    background-color: #d8c9c6d5;
     
 }
 

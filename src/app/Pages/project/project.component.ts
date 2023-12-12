@@ -1,38 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppService } from '../../Services/app-service.service';
-import { environment } from '../../../environments/environment.development';
+import { ListProjectComponent } from './list-project/list-project.component';
+import { AddProjectComponent } from './add-project/add-project.component';
+
 
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ListProjectComponent,AddProjectComponent],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'
 })
 export class ProjectComponent implements OnInit {
-  projects: any[] = [];
- 
-  constructor(private projectService: AppService) { }
- 
   ngOnInit(): void {
-    this.loadProjects();
+    throw new Error('Method not implemented.');
   }
  
-  loadProjects() {
-
-    
-    this.projectService.getReturn(`${environment.apiUrl}/api/v1/gm/projectList`).subscribe(
-      (data: any) => {
-        this.projects = data;
-        console.log(this.projects);
-        
-      },
-      (error) => {
-        console.error('Error fetching projects:', error);
-      }
-    );
-  }
 }
 
 
