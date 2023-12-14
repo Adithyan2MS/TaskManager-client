@@ -96,19 +96,19 @@
           </div>
         } 
       }
-        <label for="roleId">Role ID:</label>
+        <label for="roleId">Role:</label>
    
-        <select id="roleId" name="roles" formControlName="roleId" name="password" required>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
+        <select id="roleId" name="roles" formControlName="role" name="role" required>
+          <option value="2">General Manager</option>
+          <option value="3">Project Manager</option>
+          <option value="4">User</option>
           
         </select>
       
         @if (submit){
-        @if(!registerForm.controls["roleId"].valid && registerForm.controls["roleId"].dirty || registerForm.controls["roleId"].touched){
+        @if(!registerForm.controls["role"].valid && registerForm.controls["role"].dirty || registerForm.controls["role"].touched){
           <div class="validation-error">
-            @if(registerForm.controls["roleId"].errors?.["required"]){
+            @if(registerForm.controls["role"].errors?.["required"]){
               *Required Field   
               }     
           </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppService } from '../../../Services/app-service.service';
-import { environment } from '../../../../environments/environment.development';
+import { AppService } from '../../Services/app-service.service';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-profile',

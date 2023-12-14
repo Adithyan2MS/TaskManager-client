@@ -8,13 +8,15 @@ import { OrganizationComponent } from '../../organization/organization.component
 import { TaskCategoryComponent } from '../../task-category/task-category.component';
 import { AddProjectComponent } from '../../project/add-project/add-project.component';
 import { ProjectComponent } from '../../project/project.component';
+import { ListTeamComponent } from '../team/list-team/list-team.component';
+import { TeamComponent } from '../team/team.component';
 
 @Component({
     selector: 'app-view-area',
     standalone: true,
     templateUrl: './view-area.component.html',
     styleUrl: './view-area.component.scss',
-    imports: [CommonModule, UserComponent, RegisterComponent, OrganizationComponent, TaskCategoryComponent, TaskComponent,ProjectComponent ,TaskComponent]
+    imports: [CommonModule, UserComponent, RegisterComponent, OrganizationComponent, TaskCategoryComponent, TaskComponent, ProjectComponent, TaskComponent, TeamComponent]
 })
 export class ViewAreaComponent implements OnInit{
   constructor(private dataService:DataService){}
@@ -23,9 +25,7 @@ export class ViewAreaComponent implements OnInit{
    ngOnInit(): void {
    this.dataService.notifyObservale$.subscribe((data:any) =>{
   console.log(data);
-
   this.comp=data;
-
    })
  }
 }

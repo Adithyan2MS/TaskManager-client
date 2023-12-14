@@ -1,22 +1,26 @@
-
-@if(comp=="user"){
-    <app-user></app-user>
-}
-@else if (comp=="register") {
-    <app-register></app-register>
-}
-@else if (comp=="createOrg") {
-    <app-organization></app-organization>
-}
-
-@else if (comp=="createCategory") {
-     <app-task-category></app-task-category>
-}
-
-@else if(comp=="project"){
-    <app-project></app-project>
-}
-
-@else if(comp=="task"){
-    <app-task></app-task>
+@switch(comp){
+    @case ("user") {
+        <app-user></app-user>}
+    @case("register") {
+        <app-register></app-register>
+    }
+    @case ("createOrg") {
+        <app-organization></app-organization>
+    }
+    
+    @case ("createCategory") {
+         <app-task-category></app-task-category>
+    }
+    
+    @case("project"){
+        <app-project></app-project>
+    }
+    
+    @case("task"){
+        <app-task></app-task>
+    }
+    @case("team"){
+        <app-team></app-team>
+    }
+   
 }

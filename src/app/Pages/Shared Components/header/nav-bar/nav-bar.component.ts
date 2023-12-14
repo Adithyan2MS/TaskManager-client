@@ -16,7 +16,9 @@ export class NavBarComponent implements OnInit
 {
   user: string | any;
   username: string | any;
-  firstname: string|any;
+  firstname: string='';
+  lastname: string='';
+  shortname:string|any;
   constructor(private appService: AppService, private router: Router){}
   
   ngOnInit(): void {
@@ -32,7 +34,13 @@ export class NavBarComponent implements OnInit
       
 
       this.firstname = JSON.parse(this.user).firstname;
-     
+      this.lastname = JSON.parse(this.user).lastname;
+        if(this.lastname==null){
+        this.shortname=this.firstname.charAt(0);
+         }
+        else{
+            this.shortname=this.firstname.charAt(0)+ this.lastname?.charAt(0);
+         }
       
     }
     else{

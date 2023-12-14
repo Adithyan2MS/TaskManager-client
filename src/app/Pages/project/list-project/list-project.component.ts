@@ -17,6 +17,14 @@ export class ListProjectComponent implements OnInit {
   constructor(private projectService: AppService) { }
  
   ngOnInit(): void {
+    console.log("jhjgyj");
+    
+    this.loadProjects();
+  }
+  loadProjects() {
+
+    
+
     this.projectService.getReturn(`${environment.apiUrl}/api/v1/gm/projectList`).subscribe(
       (data: any) => {
         this.projects = data;
@@ -29,9 +37,5 @@ export class ListProjectComponent implements OnInit {
     );
   
   }
- 
-  loadProjects() {
-
-    
-  }
+  
 }

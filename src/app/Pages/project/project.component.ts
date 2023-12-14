@@ -13,7 +13,7 @@ import { AddProjectComponent } from './add-project/add-project.component';
 })
 export class ProjectComponent implements OnInit {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+   
   }
  
 }
