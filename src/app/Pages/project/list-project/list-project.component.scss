@@ -32,7 +32,12 @@
     text-align: left;
     border-bottom: 1px solid #ddd;
   }
-   
+
+  tr:hover {
+    background-color: #b4ddff;
+    transition: background-color 0.3s ease;
+}
+
   th {
     background-color: #3498db;
     color: #fff;

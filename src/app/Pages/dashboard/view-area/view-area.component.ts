@@ -8,7 +8,7 @@ import { OrganizationComponent } from '../../organization/organization.component
 import { TaskCategoryComponent } from '../../task-category/task-category.component';
 import { AddProjectComponent } from '../../project/add-project/add-project.component';
 import { ProjectComponent } from '../../project/project.component';
-import { ListTeamComponent } from '../team/list-team/list-team.component';
+import { ListTeamComponent } from '../../list-team/list-team.component';
 import { TeamComponent } from '../team/team.component';
 
 @Component({

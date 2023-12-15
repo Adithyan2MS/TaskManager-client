@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppService } from '../../../Services/app-service.service';
 import { environment } from '../../../../environments/environment.development';
@@ -13,11 +13,11 @@ import { environment } from '../../../../environments/environment.development';
 export class ListProjectComponent implements OnInit {
 
   projects: any[] = [];
+  @Output() viewEvent=new EventEmitter<any>()
  
   constructor(private projectService: AppService) { }
  
   ngOnInit(): void {
-    console.log("jhjgyj");
     
     this.loadProjects();
   }
@@ -37,5 +37,8 @@ export class ListProjectComponent implements OnInit {
     );
   
   }
-  
+  showDetails(project:any){
+  this.viewEvent.emit(project);
+
+  }
 }
