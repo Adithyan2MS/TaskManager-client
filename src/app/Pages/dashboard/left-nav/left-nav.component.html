@@ -26,9 +26,14 @@
 
        <div class="item" (click)="viewComponent('task')">Tasks</div>
 
-       
-
     </div>
+  }
+
+  @case("PM"){
+     <div class="item" (click)="viewComponent('team')">Team</div>
+
+     <div class="item" (click)="viewComponent('task')">Tasks</div>
+  
     
   }
 }

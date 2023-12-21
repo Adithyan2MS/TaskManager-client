@@ -4,7 +4,7 @@
       <h2>Login</h2>
     </div> 
 
-      <form [formGroup]="loginForm" action="/submit" method="post" (ngSubmit)="userLogin()">
+      <form [formGroup]="loginForm" method="post" (ngSubmit)="userLogin()">
         <label for="username">Username:</label>
         <input type="text" formControlName="username" id="username" name="username" required >
        @if (submit) {

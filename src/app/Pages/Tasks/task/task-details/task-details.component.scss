@@ -1,4 +1,4 @@
-.project-head {
+.task-head {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -7,7 +7,7 @@
     border-radius: 8px 8px 0 0;
 }
 
-.project-details {
+.task-details {
     width: 70%;
     margin: 20px auto;
     padding: 20px;
@@ -17,17 +17,17 @@
     border-bottom:5px solid #66a8d4
 }
 
-.project-info {
+.task-info {
     margin-bottom: 15px;
 }
 
-.project-info strong {
+.task-info strong {
     display: inline-block;
     width: 120px; 
     font-weight: bold;
 }
 
-.project-info span {
+.task-info span {
     display: inline-block;
     margin-left: 10px;
 }

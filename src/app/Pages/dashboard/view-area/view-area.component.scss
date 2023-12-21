@@ -6,8 +6,11 @@ app-task{
 }
 
 app-task-category{
-    background-color: rgb(226, 219, 217);
+    display: flex;
+    justify-content: center;
+    align-items:center ;
     border-radius: 12px;
+    
 }
 app-user{
     width:40%;

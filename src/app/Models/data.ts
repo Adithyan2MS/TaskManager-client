@@ -24,3 +24,14 @@ export interface Project{
     project_status:String 
 }
 
+export interface Task{
+ t_title:String,
+ t_code:String,
+ t_description:String,
+ assignedto:number|null
+ duedate:Date,
+ t_status:String,
+ project_id:number|null
+ c_id:number|null
+ priority_id:number|null
+}

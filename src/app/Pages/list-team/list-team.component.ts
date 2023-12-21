@@ -21,14 +21,14 @@ export class ListTeamComponent implements OnInit{
  
   loadMembers() {
     
-    this.userService.getReturn(`${environment.apiUrl}/api/v1/project/task/AssignedTasks`).subscribe(
+    this.userService.getReturn(`${environment.apiUrl}/api/v1/user/team`).subscribe(
       (data: any) => {
         this.members = data;
         console.log(this.members);
         
       },
       (error) => {
-        console.error('Error fetching tasks:', error);
+        console.error('Error fetching team:', error);
       }
     );
   }

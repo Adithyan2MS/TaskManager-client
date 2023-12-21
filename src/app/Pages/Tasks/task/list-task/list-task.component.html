@@ -4,17 +4,14 @@
       <thead>
         <tr>
           <th>Task Title</th>
-          <th>Task Code</th>
           <th>Status</th>
           <th>Assigned To</th>
-          <th>Due Date</th>
         </tr>
       </thead>
       <tbody>
   @for(task of tasks; track task.id) {
-          <tr class="task-item">
+          <tr class="task-item" (click)="showTaskDetails(task)">
             <td>{{ task.t_title }}</td>
-            <td>{{ task.t_code }}</td>
             <td class="status-item">
               @if (task.t_status == "Completed") {
                 <div class="greenBullet"></div>
@@ -24,7 +21,7 @@
               <span>{{ task.t_status }}</span>
             </td>
             <td>{{task.firstname}} {{task.lastname}}</td>
-            <td>{{ task.duedate }}</td>
+     
           </tr>
         }
       </tbody>
