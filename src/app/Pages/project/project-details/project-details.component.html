@@ -20,6 +20,26 @@
             <strong>Status:</strong>
             <span>{{project.project_status}}</span>
         </div>
+        <div class="project-members">
+            <div class="members">
+                <strong>Project Members:</strong>
+                <button (click)="onAddClick()">Add</button>
+            </div>
+            <div class="membertable">
+                <table>
+                    <tr>
+                      <th>Name</th>
+                      <th>Designation</th>
+                    </tr>
+                    @for (item of userList; track $index) {
+                      <tr>
+                        <td>{{item.firstname}} {{item.lastname}}</td>
+                        <td>{{item.roles}}</td>
+                      </tr>
+                    }
+                  </table>
+            </div>
+        </div>
    
     </div>
  

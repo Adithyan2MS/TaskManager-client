@@ -8,6 +8,9 @@
         <app-create-task></app-create-task>
 
       }
+      @else if(modalTitle=="addMember"){
+        <app-add-member [projectId]="modalText"></app-add-member>
+      }
 		<a class="modal--close-btn" (click)="close($event)">X</a>
 	</div>
 </div>

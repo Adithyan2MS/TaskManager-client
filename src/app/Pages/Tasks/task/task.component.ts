@@ -39,7 +39,6 @@ export class TaskComponent implements OnInit {
   
   searchTask(event: any) {    
     this.searchTaskName = event.target.value
-
     
   }
 

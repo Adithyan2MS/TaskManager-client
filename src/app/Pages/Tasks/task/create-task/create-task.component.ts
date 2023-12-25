@@ -20,7 +20,10 @@ export class CreateTaskComponent {
   submit:boolean=false;
   taskCreateSuccess: boolean | any;
   errorMsg:string | any;
+  categoryList:any[]=[]
+  priorityList:any[]=[]
   projects: any[] = [];
+  projectUsers:any[] = []
 
 
   constructor(private formBuilder : FormBuilder, private projectService : AppService, private router: Router){}
@@ -35,6 +38,8 @@ export class CreateTaskComponent {
         console.error('Error fetching projects:', error);
       }
     );
+    this.getTaskCategory();
+    this.getTaskPriority()
   
 
     this.taskForm=this.formBuilder.group({
@@ -44,15 +49,14 @@ export class CreateTaskComponent {
       t_description:["",Validators.required],
       duedate:["",Validators.required],
       t_status:["",Validators.required],
-      assignedto:[null,Validators.required],
+      assigned_to:[null,Validators.required],
       project_id:[null,Validators.required],
-      c_id:[null,Validators.required],
+      category_id:[null,Validators.required],
       priority_id:[null,Validators.required]    
    })
  }
  createTask(){
-   console.log(this.taskForm);
-   
+  
    this.submit=true;
    if(this.taskForm.invalid){
      this.taskForm.markAllAsTouched();
@@ -68,15 +72,13 @@ export class CreateTaskComponent {
     t_description: formValues.t_description,
     duedate: formValues.duedate,
     t_status: formValues.t_status,
-    assignedto: formValues.assignedto,
+    assignedto: formValues.assigned_to,
     project_id: formValues.project_id,
-    c_id: formValues.c_id,
+    c_id: formValues.category_id,
     priority_id: formValues.priority_id,
   }
-
- console.log(taskData);
-
- this.projectService.postReturn(`${environment.apiUrl}/api/v1/project/task/create`,taskData).subscribe((resp:any)=>{
+  const headers = new HttpHeaders().set("ResponseType","text")
+ this.projectService.postReturn(`${environment.apiUrl}/api/v1/project/task/create`,taskData,{headers}).subscribe((resp:any)=>{
    console.log("Project Created Successfully",resp);
      this.taskCreateSuccess=true;
      window.alert("Project Created Successfully!")
@@ -85,5 +87,26 @@ export class CreateTaskComponent {
   })
   
   this.submit=false;
+}
+getTaskCategory(){
+  this.projectService.getReturn(`${environment.apiUrl}/api/v1/project/task/category`).subscribe((data:any)=>{
+    this.categoryList = data
+  },(error)=>console.log(error))
+}
+getTaskPriority(){
+  this.projectService.getReturn(`${environment.apiUrl}/api/v1/project/task/priority`).subscribe((data:any)=>{
+    this.priorityList = data
+  },(error)=>console.log(error))
+}
+
+onProjectChange(event:any){
+  const projectId = event.target.value
+  if(projectId){
+    this.projectService.getReturn(`${environment.apiUrl}/api/v1/project/${projectId}/userlist`).subscribe((data:any)=>{
+      this.projectUsers = data
+    },(error)=>{
+      console.log(error);      
+    })
+  }
 }
 }

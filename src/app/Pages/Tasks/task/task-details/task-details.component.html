@@ -18,11 +18,36 @@
     </div>
     <div class="task-info">
         <strong>Status:</strong>
-        <span>{{task.t_status}}</span>
+        <div class="withEdit">
+            @if (isStatusOptionOpened) {
+                <select id="taskStatus" name="taskStatus" formControlName="t_status" name="taskStatus" required (change)="getStatusValue($event)">
+                    <option value="Active">Active</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Under Review">Under Review</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                <button (click)="onChangeStatus()">Change</button>
+            }@else {
+                <span>{{status}}</span>
+                <button (click)="changeStatus()">Edit Status</button>
+            }
+        </div>
     </div>
     <div class="task-info">
         <strong>Assigned To:</strong>
-        <span>{{task.firstname}} {{task.lastname}}</span>
+        <div class="withEdit">
+            @if (isAssignedToOptionOpened) {
+                <select name="" id="" (change)="getHolderValue($event)">
+                    @for (item of projectUsers; track $index) {
+                        <option value={{item.id}}>{{item.firstname}} {{item.lastname}}</option>
+                    }
+                </select>
+                <button (click)="onChangeAssignedTo()">Change</button>
+            }@else {
+                <span>{{asignedTo}}</span>
+                <button (click)="changeAssignedTo()">Edit Assigned To</button>
+            }
+        </div>
     </div>
     <div class="task-info">
         <strong>Project:</strong>
